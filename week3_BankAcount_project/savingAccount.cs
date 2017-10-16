@@ -6,33 +6,32 @@ using System.Threading.Tasks;
 
 namespace week3_BankAcount_project
 {
-    class savingAccount:accounts
+    class savingAccount : accounts
 
-    { 
-   
-
-
-    public  savingAccount(decimal accountBalance, int accountnumber, decimal withdrawFunds, decimal depositfunds, decimal minimumAcctBalance)
     {
+        private const decimal minimumBalance = 200;
 
-        this.AccountBalance = AccountBalance;
-        this.AccountNumber = accountnumber;
-        this.WithdrawMoney = withdrawFunds;
-        this.Depositfunds = Depositfunds;
+
+        public savingAccount(decimal acountbalance, string accountNumber) : base(acountbalance, accountNumber, "saving")
+        {
+
+        }
+
+       public override bool withdraw(decimal amount)
+        {   
+            if(this.AccountBalance>minimumBalance+amount)
+            {
+                return base.withdraw(amount);
+            }
+           else
+            {
+                return false;
+            }
+
+        }
+       
     }
             
         
-        public virtual decimal GetAcountBalance()
-        {
-            return this.AccountBalance;
-        }
-       public virtual decimal GetWithdrawFunds()
-        {
-            return this.AccountBalance - this.WithdrawMoney;
-        }
-        public virtual decimal DepositFunds()
-        {
-            return this.AccountBalance + this.AccountBalance;
-        }
+        
     }
-}

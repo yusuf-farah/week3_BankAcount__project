@@ -12,8 +12,9 @@ namespace week3_BankAcount_project
 
         private string name;
         private string address;
-        private int phoneNumber;
-
+        private string phoneNumber;
+        private savingAccount saving; 
+        private checkingAccount checking;
         // properties
 
         public string Name
@@ -29,24 +30,38 @@ namespace week3_BankAcount_project
             set { this.address = value; }
         }
 
-        public int  PhoneNumber
+        public string  PhoneNumber
         {
             get { return this.PhoneNumber; }
             set { this.PhoneNumber = value; }
         }
 
+        public  checkingAccount Checking
+        {  get { return this.checking; }
+            set { this.checking= value; }
+
+        }
+
+        public savingAccount Saving
+        {
+            get { return this.saving; }
+            set { this.saving = value; }
+        }
+
         // constructors
 
-        public client( string yusuf, string address, int phone)
+        public client( string name, string address, string phone, savingAccount saving, checkingAccount checking)
         {
-            this.Name = "yusuf";
-            this.Address = "1345 cassady oh ";
-            this.PhoneNumber = 61453457;
+            this.name = name;
+            this.address = address;
+            this.phoneNumber = phone;
+            this.Checking = checking;
+            this.Saving = saving;
         }
 
         public virtual string GetInfo()
         {
-            return this.name + " " + this.address + " " + this.phoneNumber;
+            return this.name + " " + this.address + " " + this.phoneNumber+". "+this.saving.AccountNumber+ ". " + this.checking.AccountNumber;
         }
 
 

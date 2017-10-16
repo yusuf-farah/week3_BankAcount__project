@@ -10,66 +10,55 @@ namespace week3_BankAcount_project
     { // this code bellow shows the fields of the clientAccount
 
         private decimal accountbalance;
-        private int accountNumber;
-        private decimal withdrawfunds;
-        private decimal depositfunds;
-        private bool accountType;
+        private string  accountNumber; 
+        private string accountType;
         // bellow are my properties
 
         public decimal AccountBalance
         {
-            get { return this.AccountBalance; }
-            set { this.AccountBalance = value; }
+            get { return this.accountbalance; }
+            set { this.accountbalance = value; }
         }
 
-
-
-        public int AccountNumber
+        public string AccountNumber
         {
-            get { return this.AccountNumber; }
-            set { this.AccountNumber = value; }
-        }
-
-
-
-        public decimal Withdrawfuds
+            get { return this.accountNumber; }  
+        }  
+     
+        private string AccountType
         {
-            get { return this.withdrawfunds; }
-            set { this.withdrawfunds = value; }
+            get { return this.accountType; }
+             
         }
-
-        public decimal Depositfunds
-
-        {
-            get { return this.depositfunds; }
-            set { this.depositfunds = value; }
-        }
-        private bool AcountType
-        {
-            get { return this.AcountType; }
-            set { this.AcountType = value; }
-        }
-
 
         //bellow code is my constructors 
-        public accounts(decimal acountbalance, int accountNumber, decimal withdrawFunds, decimal depositFunds, bool accoutType)
+        public accounts(decimal accountbalance, string accountNumber, string accountType)
         {
-            this.AccountBalance = accountbalance;
-            this.AccountNumber = accountNumber;
-            this.withdrawfunds = withdrawFunds;
-            this.Depositfunds = depositfunds;
-            this.AcountType = accountType;
+            this.accountbalance = accountbalance;
+            this.accountNumber = accountNumber;
+            this.accountType = accountType;
         }
 
 
-        public virtual bool GetAccountType()
+        public virtual decimal depositfund(decimal amount)
         {
-            return this.AcountType;
+             this.accountbalance += amount;
+            return this.accountbalance;
+        }
+        public virtual bool withdraw( decimal amount)
+           
+        {
+            if(amount>this.accountbalance)
+            {
+                return false;
+            }
+            else
+            {
+                this.accountbalance = this.accountbalance - amount;
+                return true;
+            }
+        }
 
-        }
-        public virtual int acountNumber()
-        {
-            return this.AccountNumber;
-        }
+        
     }
 }
