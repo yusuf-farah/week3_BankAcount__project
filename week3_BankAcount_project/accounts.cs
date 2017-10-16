@@ -39,7 +39,7 @@ namespace week3_BankAcount_project
             this.accountType = accountType;
         }
 
-
+        // bellow are my methods
         public virtual decimal depositfund(decimal amount)
         {
              this.accountbalance += amount;

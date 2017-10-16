@@ -9,13 +9,13 @@ namespace week3_BankAcount_project
     class Program
     {
         static void Main(string[] args)
-        {
+        {   // bellow code is generating instantiate
             checkingAccount checking = new checkingAccount(1000, "123456");
             savingAccount saving = new savingAccount(2000, "98765");
             client client = new client("yusuf", "columbus ohio", "614", saving, checking);
             do
             {
-                //menu display or dashboard
+                //menu display or dashboard 
                 Console.WriteLine("Welcome bank of America");
                 Console.WriteLine("Please select bellow opptions.");
                 Console.WriteLine("1. View Client Information");

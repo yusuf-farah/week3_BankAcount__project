@@ -16,7 +16,7 @@ namespace week3_BankAcount_project
         {
 
         }
-
+        // bellow code is method allowing the user to withdraw money with a condition
        public override bool withdraw(decimal amount)
         {   
             if(this.AccountBalance>minimumBalance+amount)
