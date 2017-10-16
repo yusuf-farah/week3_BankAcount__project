@@ -18,7 +18,6 @@ namespace week3_BankAcount_project
                 //menu display or dashboard
                 Console.WriteLine("Welcome bank of America");
                 Console.WriteLine("Please select bellow opptions.");
-
                 Console.WriteLine("1. View Client Information");
                 Console.WriteLine("2. View Account Balance");
                 Console.WriteLine("3. Deposit Money");
@@ -112,7 +111,7 @@ namespace week3_BankAcount_project
                 }
                 else
                 {
-                    Console.WriteLine("oops wrong entry . Please try again.");
+                    Console.WriteLine("oops! wrong entry . Please try again.");
                     userchoice = int.Parse(Console.ReadLine());
                 }
                 Console.WriteLine("Would you like to make another transaction? Y or NO");
@@ -125,7 +124,6 @@ namespace week3_BankAcount_project
                     break;
                 }
 
-                //User input to contine/end transaction
 
             }
             while (true);
