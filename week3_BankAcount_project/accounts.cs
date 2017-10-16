@@ -8,22 +8,23 @@ namespace week3_BankAcount_project
 {
     class accounts
     { // this code bellow shows the fields of the clientAccount
-        
-        private decimal balance;
+
+        private decimal accountbalance;
         private int accountNumber;
-        private decimal withdrawMoney;
+        private decimal withdrawfunds;
         private decimal depositfunds;
+        private bool accountType;
         // bellow are my properties
-        
-        public decimal Balance
+
+        public decimal AccountBalance
         {
-            get { return this.Balance; }
-            set { this.Balance = value; }
+            get { return this.AccountBalance; }
+            set { this.AccountBalance = value; }
         }
 
 
 
-        public double AccountNumber
+        public int AccountNumber
         {
             get { return this.AccountNumber; }
             set { this.AccountNumber = value; }
@@ -31,10 +32,10 @@ namespace week3_BankAcount_project
 
 
 
-        public decimal WithdrawMoney
+        public decimal Withdrawfuds
         {
-            get { return this.withdrawMoney; }
-            set { this.withdrawMoney = value; }
+            get { return this.withdrawfunds; }
+            set { this.withdrawfunds = value; }
         }
 
         public decimal Depositfunds
@@ -43,15 +44,32 @@ namespace week3_BankAcount_project
             get { return this.depositfunds; }
             set { this.depositfunds = value; }
         }
+        private bool AcountType
+        {
+            get { return this.AcountType; }
+            set { this.AcountType = value; }
+        }
+
 
         //bellow code is my constructors 
-        public accounts(decimal balance, int accountNumber, decimal withdrawMoney, decimal depositMoney  )
+        public accounts(decimal acountbalance, int accountNumber, decimal withdrawFunds, decimal depositFunds, bool accoutType)
         {
-            this.Balance = balance;
+            this.AccountBalance = accountbalance;
             this.AccountNumber = accountNumber;
-            this.WithdrawMoney = withdrawMoney;
+            this.withdrawfunds = withdrawFunds;
             this.Depositfunds = depositfunds;
+            this.AcountType = accountType;
         }
-       
+
+
+        public virtual bool GetAccountType()
+        {
+            return this.AcountType;
+
+        }
+        public virtual int acountNumber()
+        {
+            return this.AccountNumber;
+        }
     }
 }

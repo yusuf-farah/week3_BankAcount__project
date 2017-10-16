@@ -29,7 +29,7 @@ namespace week3_BankAcount_project
             set { this.address = value; }
         }
 
-        public string PhoneNumber
+        public int  PhoneNumber
         {
             get { return this.PhoneNumber; }
             set { this.PhoneNumber = value; }
@@ -37,11 +37,11 @@ namespace week3_BankAcount_project
 
         // constructors
 
-        public client( string yusuf, string , string state)
+        public client( string yusuf, string address, int phone)
         {
             this.Name = "yusuf";
             this.Address = "1345 cassady oh ";
-            this.PhoneNumber = "6145672905";
+            this.PhoneNumber = 61453457;
         }
 
         public virtual string GetInfo()
@@ -50,7 +50,7 @@ namespace week3_BankAcount_project
         }
 
 
-
+        
 
 
 

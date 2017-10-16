@@ -6,22 +6,33 @@ using System.Threading.Tasks;
 
 namespace week3_BankAcount_project
 {
-    class savingAccount:clientAccount
+    class savingAccount:accounts
+
+    { 
+   
+
+
+    public  savingAccount(decimal accountBalance, int accountnumber, decimal withdrawFunds, decimal depositfunds, decimal minimumAcctBalance)
     {
-        private double interest;
 
-        public double Interest
+        this.AccountBalance = AccountBalance;
+        this.AccountNumber = accountnumber;
+        this.WithdrawMoney = withdrawFunds;
+        this.Depositfunds = Depositfunds;
+    }
+            
+        
+        public virtual decimal GetAcountBalance()
         {
-            get { return this.interest; }
-            set { this.interest = value; }
+            return this.AccountBalance;
         }
-        public savingAccount(string name, decimal balance, int accountnumber, decimal withdrawMoney, decimal depositMoney, double interest)
+       public virtual decimal GetWithdrawFunds()
         {
-            this.Name = name;
-            this.Balance = balance;
-            this.AccountNumber = accountnumber;
-            this.i
-
+            return this.AccountBalance - this.WithdrawMoney;
+        }
+        public virtual decimal DepositFunds()
+        {
+            return this.AccountBalance + this.AccountBalance;
         }
     }
 }
